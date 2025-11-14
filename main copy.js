@@ -221,8 +221,7 @@ class QuizScene extends Phaser.Scene {
       },
       loop: true
     });
-    //解説
-  this.explainImage = this.add.image(180, 360, "kaisetu");
+  this.explainImage = this.add.image(180, 360, "explainImage");
   this.explainImage.setDisplaySize(180, 180);
    // if (this.animationTimer) {
      // this.animationTimer.remove();

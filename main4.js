@@ -184,7 +184,7 @@ class QuizScene extends Phaser.Scene {
       wordWrap: { width: 320 }
     });
 
-    this.nextButton = this.add.text(100, 600, '[ つぎへ ]', {
+    this.nextButton = this.add.text(120, 600, '[ つぎへ ]', {
       fontSize: '20px',
       fontFamily: '"Noto Sans JP"',
       fill: '#fff',
@@ -255,7 +255,7 @@ const config = {
          width: 400,
     height: 850,
     },
-  backgroundColor: '#ffffffff',
+  backgroundColor: '#fff',
   parent: 'game-container',
   scene: [TitleScene, QuizScene]
 };

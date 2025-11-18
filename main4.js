@@ -4,12 +4,12 @@ class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor('#ffe');
+    this.cameras.main.setBackgroundColor('rgba(255, 255, 255, 1)');
 
     this.add.text(60, 200, 'くいずげーむ', {
       fontSize: '32px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000'
+      fill: '#ffffffff'
     });
 
     const startText = this.add.text(100, 300, '[ すたーと ]', {
@@ -75,9 +75,9 @@ class QuizScene extends Phaser.Scene {
     this.resultText = this.add.text(20, 560, '', {
       fontSize: '28px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
-      
-      
+      fill: '#ffffffff',
+     
+  
     });
 
     this.showQuestion(this.currentQuestionIndex);
@@ -180,7 +180,7 @@ class QuizScene extends Phaser.Scene {
     this.explanationText = this.add.text(20, 250, q.explanationText, {
       fontSize: '18px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
+      fill: '#000000ff',
       wordWrap: { width: 320 }
     });
 
@@ -228,13 +228,13 @@ showEndScreen() {
 this.add.text(40, 200, `遊んでくれてありがとう！\n他にもクイズのあるパネルが\nたくさんあるよ\nめぐってみてね！`, {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000'
+      fill: '#2f9398ff'
     });
 
     const backBtn = this.add.text(100, 400, '[ たいとるにもどる ]', {
       fontSize: '22px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
+      fill: '#000000ff',
       backgroundColor: '#ccc',
       padding: { x: 10, y: 15 }
     }).setInteractive();

@@ -107,7 +107,7 @@ class QuizScene extends Phaser.Scene {
       wordWrap: { width: 320 }
     });
 
-    this.imageObject = this.add.image(180, 180, q.imageKey);
+    this.imageObject = this.add.image(220, 180, q.imageKey);
     this.imageObject.setDisplaySize(200, 200);
 
     for (let i = 0; i < q.answers.length; i++) {
@@ -154,7 +154,7 @@ class QuizScene extends Phaser.Scene {
     this.choices = [];
      // 手動アニメーション
     let frameIndex = 0;
-    this.animationSprite = this.add.image(180, 150, q.animationFrames[frameIndex]);
+    this.animationSprite = this.add.image(220, 150, q.animationFrames[frameIndex]);
     this.animationSprite.setDisplaySize(200, 200);
 
     this.animationTimer = this.time.addEvent({
@@ -165,7 +165,7 @@ class QuizScene extends Phaser.Scene {
       },
       loop: true
     });
-  this.explainImage = this.add.image(180, 450, "kaisetu");
+  this.explainImage = this.add.image(220, 450, "kaisetu");
   this.explainImage.setDisplaySize(220, 220);
    // if (this.animationTimer) {
      // this.animationTimer.remove();
@@ -255,7 +255,7 @@ const config = {
          width: 500,
     height: 1000,
     },
-  backgroundColor: '#006082',
+  backgroundColor: '#ffffffff',
   parent: 'game-container',
   scene: [TitleScene, QuizScene]
 };

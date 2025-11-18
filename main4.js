@@ -251,7 +251,9 @@ const config = {
     height: window.innerHeight,
   scale: {
         mode: Phaser.Scale.FIT,       // 端末に合わせて拡大縮小
-        autoCenter: Phaser.Scale.CENTER_BOTH // 中央寄せ
+        autoCenter: Phaser.Scale.CENTER_BOTH, // 中央寄せ
+         width: 1200,
+    height: 800
     },
   backgroundColor: '#006082',
   parent: 'game-container',

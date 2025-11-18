@@ -247,8 +247,12 @@ this.add.text(40, 200, `遊んでくれてありがとう！\n他にもクイズ
 
 const config = {
   type: Phaser.AUTO,
-  width: 360,
-  height: 640,
+      width: window.innerWidth,
+    height: window.innerHeight,
+  scale: {
+        mode: Phaser.Scale.FIT,       // 端末に合わせて拡大縮小
+        autoCenter: Phaser.Scale.CENTER_BOTH // 中央寄せ
+    },
   backgroundColor: '#006082',
   parent: 'game-container',
   scene: [TitleScene, QuizScene]

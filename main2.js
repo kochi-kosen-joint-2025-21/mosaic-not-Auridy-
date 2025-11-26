@@ -4,19 +4,19 @@ class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor('#ffe');
+    this.cameras.main.setBackgroundColor('rgba(255, 255, 255, 1)');
 
     this.add.text(60, 200, 'くいずげーむ', {
       fontSize: '32px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000'
+      fill: '#ffffffff'
     });
 
-    const startText = this.add.text(100, 300, '[ すたーと ]', {
+   const startText = this.add.text(100, 300, '[ おびぶらすたーと！ ]', {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#0077cc',
-      backgroundColor: '#eee',
+      fill: '#000000ff',
+      backgroundColor: '#ffffffff',
       padding: { x: 20, y: 10 }
     }).setInteractive();
 
@@ -33,8 +33,8 @@ class QuizScene extends Phaser.Scene {
 
   preload() {
     this.questions = [
-      {
-        question: "この 画像はなに？",
+            {
+         question: "この 画像はなに？",
         imageKey: "kimono",
         imagePath: "assets/ani/kimono/7.png",
         answers: ["白衣", "ドレス", "着物", "浴衣"],
@@ -51,7 +51,8 @@ class QuizScene extends Phaser.Scene {
                 "assets/ani/kimono/1.png",
           
         ]
-      },
+      }
+
     ];
 
     this.questions.forEach(q => {
@@ -60,7 +61,7 @@ class QuizScene extends Phaser.Scene {
         this.load.image(frameKey, q.animationFramePaths[i]);
       });
     });
-      this.load.image("kaisetu", "assets/kaisetu/nakanisi.png");
+      this.load.image("kaisetu", "assets/kaisetu/ichiya.png");
   }
 
   create() {
@@ -75,9 +76,9 @@ class QuizScene extends Phaser.Scene {
     this.resultText = this.add.text(20, 560, '', {
       fontSize: '28px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
-      
-      
+      fill: '#ffffffff',
+     
+  
     });
 
     this.showQuestion(this.currentQuestionIndex);
@@ -107,7 +108,7 @@ class QuizScene extends Phaser.Scene {
       wordWrap: { width: 320 }
     });
 
-    this.imageObject = this.add.image(180, 180, q.imageKey);
+    this.imageObject = this.add.image(220, 180, q.imageKey);
     this.imageObject.setDisplaySize(200, 200);
 
     for (let i = 0; i < q.answers.length; i++) {
@@ -154,7 +155,7 @@ class QuizScene extends Phaser.Scene {
     this.choices = [];
      // 手動アニメーション
     let frameIndex = 0;
-    this.animationSprite = this.add.image(180, 150, q.animationFrames[frameIndex]);
+    this.animationSprite = this.add.image(220, 150, q.animationFrames[frameIndex]);
     this.animationSprite.setDisplaySize(200, 200);
 
     this.animationTimer = this.time.addEvent({
@@ -165,7 +166,7 @@ class QuizScene extends Phaser.Scene {
       },
       loop: true
     });
-  this.explainImage = this.add.image(180, 450, "kaisetu");
+  this.explainImage = this.add.image(220, 450, "kaisetu");
   this.explainImage.setDisplaySize(220, 220);
    // if (this.animationTimer) {
      // this.animationTimer.remove();
@@ -180,11 +181,11 @@ class QuizScene extends Phaser.Scene {
     this.explanationText = this.add.text(20, 250, q.explanationText, {
       fontSize: '18px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
+      fill: '#000000ff',
       wordWrap: { width: 320 }
     });
 
-    this.nextButton = this.add.text(100, 600, '[ つぎへ ]', {
+    this.nextButton = this.add.text(120, 600, '[ つぎへ ]', {
       fontSize: '20px',
       fontFamily: '"Noto Sans JP"',
       fill: '#fff',
@@ -225,19 +226,18 @@ showEndScreen() {
       this.animationSprite = null;
     }
 
-    // ★ スコア表示
 this.add.text(40, 200, `遊んでくれてありがとう！\n他にもクイズのあるパネルが\nたくさんあるよ\nめぐってみてね！`, {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000'
+      fill: '#2f9398ff'
     });
 
     const backBtn = this.add.text(100, 400, '[ たいとるにもどる ]', {
       fontSize: '22px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#000',
+      fill: '#000000ff',
       backgroundColor: '#ccc',
-      padding: { x: 10, y: 5 }
+      padding: { x: 10, y: 15 }
     }).setInteractive();
 
     backBtn.on('pointerdown', () => {
@@ -248,9 +248,15 @@ this.add.text(40, 200, `遊んでくれてありがとう！\n他にもクイズ
 
 const config = {
   type: Phaser.AUTO,
-  width: 360,
-  height: 640,
-  backgroundColor: '#006082',
+      width: window.innerWidth,
+    height: window.innerHeight,
+  scale: {
+        mode: Phaser.Scale.FIT,       // 端末に合わせて拡大縮小
+        autoCenter: Phaser.Scale.CENTER_BOTH, // 中央寄せ
+         width: 400,
+    height: 850,
+    },
+  backgroundColor: '#fff',
   parent: 'game-container',
   scene: [TitleScene, QuizScene]
 };

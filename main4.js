@@ -12,11 +12,11 @@ class TitleScene extends Phaser.Scene {
       fill: '#ffffffff'
     });
 
-    const startText = this.add.text(100, 300, '[ すたーと ]', {
+    const startText = this.add.text(100, 300, '[ おびぶらすたーと！ ]', {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#0077cc',
-      backgroundColor: '#eee',
+      fill: '#000000ff',
+      backgroundColor: '#ffffffff',
       padding: { x: 20, y: 10 }
     }).setInteractive();
 

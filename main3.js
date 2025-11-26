@@ -60,7 +60,7 @@ class QuizScene extends Phaser.Scene {
         this.load.image(frameKey, q.animationFramePaths[i]);
       });
     });
-      this.load.image("kaisetu", "assets/kaisetu/ichiya.png");
+      this.load.image("kaisetu", "assets/kaisetu/matuuraya.png");
   }
 
   create() {

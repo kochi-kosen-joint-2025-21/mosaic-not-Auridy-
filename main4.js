@@ -12,7 +12,7 @@ class TitleScene extends Phaser.Scene {
       fill: '#ffffffff'
     });
 
-    const startText = this.add.text(100, 300, '[ おびぶらすたーと！ ]', {
+    const startText = this.add.text(100, 300, ' ーーーーーーーー\n|おびブラクイズ  |\n|スタート！           |\nーーーーーーーー ', {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
       fill: '#000000ff',

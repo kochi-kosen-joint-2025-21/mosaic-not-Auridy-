@@ -9,10 +9,10 @@ class TitleScene extends Phaser.Scene {
     this.add.text(60, 200, 'くいずげーむ', {
       fontSize: '32px',
       fontFamily: '"Noto Sans JP"',
-      fill: '#ffffffff'
+      fill: '#000000ff'
     });
 
-     const startText = this.add.text(100, 300, '[ おびぶらすたーと！ ]', {
+     const startText = this.add.text(100, 300, ' ーーーーーーーー\n|おびブラクイズ  |\n|スタート！           |\nーーーーーーーー ', {
       fontSize: '24px',
       fontFamily: '"Noto Sans JP"',
       fill: '#000000ff',
@@ -62,7 +62,7 @@ class QuizScene extends Phaser.Scene {
         this.load.image(frameKey, q.animationFramePaths[i]);
       });
     });
-      this.load.image("kaisetu", "assets/kaisetu/ichiya.png");
+      this.load.image("kaisetu", "assets/kaisetu/honiya.png");
   }
 
   create() {

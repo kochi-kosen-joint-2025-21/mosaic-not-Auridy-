@@ -158,7 +158,7 @@ class QuizScene extends Phaser.Scene {
     this.animationSprite.setDisplaySize(200, 200);
 
     this.animationTimer = this.time.addEvent({
-      delay: 200,
+      delay: 2000,
       callback: () => {
         frameIndex = (frameIndex + 1) % q.animationFrames.length;
         this.animationSprite.setTexture(q.animationFrames[frameIndex]);

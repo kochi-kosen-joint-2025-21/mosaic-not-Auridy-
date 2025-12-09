@@ -160,7 +160,7 @@ class QuizScene extends Phaser.Scene {
     this.animationSprite.setDisplaySize(200, 200);
 
     this.animationTimer = this.time.addEvent({
-      delay: 2000,
+      delay: 1750,
       callback: () => {
         frameIndex = (frameIndex + 1) % q.animationFrames.length;
         this.animationSprite.setTexture(q.animationFrames[frameIndex]);
@@ -196,6 +196,7 @@ class QuizScene extends Phaser.Scene {
 
     this.nextButton.on('pointerdown', () => {
       this.nextButton.destroy();
+       this.resultText.destroy();
       this.explanationText.destroy();
       if (this.animationSprite) {
         this.animationSprite.destroy();
